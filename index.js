@@ -58,6 +58,9 @@ app.use("/api/category", categoryRoutes);
 app.get("/", (req, res) => {
   res.send({ message: "Welcome to the room" });
 });
+app.get("/api/dev", (req, res) => {
+  res.send({ message: "Welcome to the api dev" });
+});
 
 app.listen(PORT, () => {
   connectDB();
