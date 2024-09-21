@@ -55,7 +55,7 @@ app.use("/api/rooms", roomRoutes);
 app.use("/api/blogs", blogRoutes);
 
 app.use("/api/category", categoryRoutes);
-app.get("/api", (req, res) => {
+app.get("/", (req, res) => {
   res.send({ message: "Welcome to the room" });
 });
 
