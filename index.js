@@ -41,12 +41,10 @@ app.options("*", cors(corsConfig));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-
 const PORT = process.env.PORT || 5000;
 
 app.use("/api/auth", authRoutes);
 app.use("/api", usersRoutes);
-
 
 app.use("/api/bookings", bookingRoutes);
 
@@ -57,7 +55,9 @@ app.use("/api/rooms", roomRoutes);
 app.use("/api/blogs", blogRoutes);
 
 app.use("/api/category", categoryRoutes);
-
+app.get("/", (req, res) => {
+  res.send({ message: "Welcome to the room" });
+});
 
 app.listen(PORT, () => {
   connectDB();
